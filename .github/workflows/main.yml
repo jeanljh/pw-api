@@ -18,6 +18,8 @@ jobs:
       uses: actions/setup-node@v3 
     - name: run npm ci
       run: npm ci
+    - name: install playwright dependencies
+      run: npx playwright install-deps
     - name: run playwright test
       run: xvfb-run --auto-servernum -- npm run test
     - name: upload playwright test report
