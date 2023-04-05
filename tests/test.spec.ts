@@ -25,20 +25,7 @@ test.describe('Test suite - API endpoints', async () => {
         })
     })
 
-    test('Test 2 - negative scenario: endpoint without the required param title', async ({request}) => {
-        const response = await request.get('', {
-            params: {
-                page: 1
-            },
-        })
-        // verify response status is successful
-        expect(response.ok()).toBeTruthy()
-        const { message } = await response.json()
-        // verify response returns a message that is not null, undefined or empty string
-        expect(message ?? '').not.toHaveLength(0)
-    })
-
-    test('Test 3 - negative scenario: invalid title', async ({request}) => {
+    test('Test 2 - negative scenario: invalid title', async ({request}) => {
         const response = await request.get('', {
             params: {
                 title: data.invalidTitle,
@@ -52,5 +39,18 @@ test.describe('Test suite - API endpoints', async () => {
         expect(page).toBe(1)
         // verify results is empty
         expect(results).toHaveLength(0)
+    })
+
+    test('Test 3 - negative scenario: endpoint without the required param title', async ({request}) => {
+        const response = await request.get('', {
+            params: {
+                page: 1
+            },
+        })
+        // verify response status is successful
+        expect(response.ok()).toBeTruthy()
+        const { message } = await response.json()
+        // verify response returns a message that is not null, undefined or empty string
+        expect(message ?? '').not.toHaveLength(0)
     })
 })
