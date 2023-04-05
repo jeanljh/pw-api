@@ -30,7 +30,7 @@ test.describe('Test suite - API endpoints', async () => {
         expect(response.ok()).toBeFalsy()
         const { message } = await response.json()
         // verify response returns a message that is not null, undefined or empty string
-        expect(message ?? '').toHaveLength(0)
+        expect(message ?? '').not.toHaveLength(0)
     })
 
     test('Test 3 negative scenario: endpoint with page number > 10', async ({request}) => {
