@@ -33,7 +33,7 @@ test.describe('Test suite - API endpoints', async () => {
         expect(message ?? '').not.toHaveLength(0)
     })
 
-    test('Test 3 negative scenario: endpoint with page number > 10', async ({request}) => {
+    test('Test 3 - negative scenario: endpoint with page number > 10', async ({request}) => {
         const response = await request.get('', {
             params: {
                 title: data.searchValue,
