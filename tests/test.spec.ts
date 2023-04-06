@@ -11,16 +11,16 @@ test.describe('Test suite - API endpoints', async () => {
         const response = await request.get('', {
             params: {
                 title: data.validTitle,
-                page: 1
+                page: data.pageNumber
             },
         })
         // verify response status is successful
         expect(response.status()).toBe(200)
         const {page, results} = await response.json()
-        // verify page number is 1
-        expect(page).toBe(1)
+        // verify page number matches input page
+        expect(page).toBe(data.pageNumber)
         results.forEach(e => {
-            // verify title contains the search value
+            // verify title matches / contains the input title
             expect(e['title'], 'match').toMatch(new RegExp(`.*${data.validTitle}.*`, 'i'))
         })
     })
@@ -29,14 +29,14 @@ test.describe('Test suite - API endpoints', async () => {
         const response = await request.get('', {
             params: {
                 title: data.invalidTitle,
-                page: 1
+                page: data.pageNumber
             }
         })
         // verify response status is successful
         expect(response.ok()).toBeTruthy()
         const {page, results} = await response.json()
-        // verify page number is 1
-        expect(page).toBe(1)
+        // verify page number matches input page
+        expect(page).toBe(data.pageNumber)
         // verify results is empty
         expect(results).toHaveLength(0)
     })
@@ -44,7 +44,7 @@ test.describe('Test suite - API endpoints', async () => {
     test('Test 3 - negative scenario: endpoint without the required param title', async ({request}) => {
         const response = await request.get('', {
             params: {
-                page: 1
+                page: data.pageNumber
             },
         })
         // verify response status is successful
