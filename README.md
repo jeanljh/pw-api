@@ -8,6 +8,7 @@ CI integration with GitHub Actions and GitHub Pages to publish the generated HTM
 GitHub page to view test report: https://jeanljh.github.io/pw-api/
 
 ## ⚙Setup
+* Clone this repository: `git clone git@github.com:jeanljh/pw-api.git`
 * Install dependencies: `npm i`
 * Run tests: `npm run test`
 * Open test report: `npm run test:report`
