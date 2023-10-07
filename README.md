@@ -1,5 +1,5 @@
 # pw-api
-[![CI](https://github.com/jeanljh/pw-api/actions/workflows/main.yml/badge.svg)](https://github.com/jeanljh/pw-api/actions/workflows/main.yml)
+[![test](https://github.com/jeanljh/pw-api/actions/workflows/test.yml/badge.svg)](https://github.com/jeanljh/pw-api/actions/workflows/test.yml)
 
 Example of test automation framework design for API endpoint testing with Playwright, TypeScript, Fixtures & Playwright reporter.
 
