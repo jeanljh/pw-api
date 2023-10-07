@@ -1,16 +1,26 @@
 {
   "name": "pw-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "example of API endpoint testing with Playwright, TypeScript, Fixtures & Playwright reporter.",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
-    "test:report": "npx playwright show-report"
+    "test": "playwright test",
+    "report": "playwright show-report",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "playwright",
+    "typescript",
+    "api"
+  ],
+  "repository": {
+    "url": "https://github.com/jeanljh/pw-api.git",
+    "type": "git"
+  },
+  "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.32.2"
+    "@playwright/test": "^1.38.1",
+    "prettier": "^3.0.3"
   }
 }

@@ -1,0 +1,6 @@
+.gitignore
+.prettierignore
+.prettierrc
+node_modules
+playwright-report
+package*.json
