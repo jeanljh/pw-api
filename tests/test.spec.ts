@@ -7,7 +7,7 @@ test.afterEach(async () => {
 })
 
 test.describe('Test suite - API endpoints', async () => {
-  test('Test 1 - positive scenario: valid title', async ({ request }) => {
+  test('Positive scenario: valid title', async ({ request }) => {
     const response = await request.get('', {
       params: {
         title: data.validTitle,
@@ -19,13 +19,13 @@ test.describe('Test suite - API endpoints', async () => {
     const { page, results } = await response.json()
     // verify page number matches input page
     expect(page).toBe(data.pageNumber)
-    results.forEach((e) => {
+    results.forEach(e => {
       // verify title matches / contains the input title
       expect(e['title'], 'match').toMatch(new RegExp(`.*${data.validTitle}.*`, 'i'))
     })
   })
 
-  test('Test 2 - negative scenario: invalid title', async ({ request }) => {
+  test('Negative scenario: invalid title', async ({ request }) => {
     const response = await request.get('', {
       params: {
         title: data.invalidTitle,
@@ -41,7 +41,7 @@ test.describe('Test suite - API endpoints', async () => {
     expect(results).toHaveLength(0)
   })
 
-  test('Test 3 - negative scenario: endpoint without the required param title', async ({ request }) => {
+  test('Negative scenario: endpoint without the required param title', async ({ request }) => {
     const response = await request.get('', {
       params: {
         page: data.pageNumber,
