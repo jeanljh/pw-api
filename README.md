@@ -11,7 +11,7 @@ GitHub page to view test report: https://jeanljh.github.io/pw-api/
 * Clone this repository: `git clone git@github.com:jeanljh/pw-api.git`
 * Install dependencies: `npm i`
 * Run tests: `npm run test`
-* Open test report: `npm run test:report`
+* Open test report: `npm run report`
 
 ## 📖Documentation
 <a href="https://playwright.dev/docs/intro">Playwright doc</a>

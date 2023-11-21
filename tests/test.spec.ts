@@ -3,10 +3,10 @@ import data from '../fixtures/data.json'
 
 test.afterEach(async () => {
   // due to free api rate limit of one request per second, add delay to each request
-  await new Promise(resolve => setTimeout(resolve, 1500))
+  await new Promise((resolve) => setTimeout(resolve, 1500))
 })
 
-test.describe('API endpoints', async () => {
+test.describe('Test suite - API endpoints', async () => {
   test('Positive scenario: valid title', async ({ request }) => {
     const response = await request.get('', {
       params: {
@@ -19,7 +19,7 @@ test.describe('API endpoints', async () => {
     const { page, results } = await response.json()
     // verify page number matches input page
     expect(page).toBe(data.pageNumber)
-    results.forEach(e => {
+    results.forEach((e) => {
       // verify title matches / contains the input title
       expect(e['title'], 'match').toMatch(new RegExp(`.*${data.validTitle}.*`, 'i'))
     })

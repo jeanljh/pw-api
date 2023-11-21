@@ -1,6 +1,7 @@
+// playwright.config.ts
 import { defineConfig } from '@playwright/test'
 export default defineConfig({
-  reporter: 'html',
+  reporter: [['list'], ['html']],
   use: {
     baseURL: 'https://ott-details.p.rapidapi.com/search',
     extraHTTPHeaders: {

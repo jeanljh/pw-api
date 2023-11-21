@@ -2,6 +2,7 @@ name: test
 
 on:
   pull_request:
+    branches: master
   workflow_dispatch:
 
 jobs:
@@ -12,14 +13,14 @@ jobs:
     - name: checkout
       uses: actions/checkout@v4
     - name: setup node
-      uses: actions/setup-node@v3
-    - name: run npm ci
+      uses: actions/setup-node@v4
+    - name: install dependencies
       run: npm ci
-    - name: install playwright dependencies
-      run: npx playwright install --with-deps
+    - name: install playwright browsers
+      run: npx playwright install-deps
     - name: run playwright test
-      run: xvfb-run --auto-servernum -- npm run test
-    - name: upload playwright test report
+      run: npx playwright test
+    - name: upload test report
       uses: actions/upload-artifact@v3
       if: always()
       with:
