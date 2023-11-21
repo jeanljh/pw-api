@@ -1,16 +1,22 @@
 {
   "name": "pw-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "example of automation test framework design for API endpoint testing with Playwright, TypeScript, Fixtures & Playwright reporter",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
-    "test:report": "npx playwright show-report"
+    "test": "playwright test",
+    "report": "playwright show-report",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx}\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "playwright",
+    "typescript",
+    "api"
+  ],
+  "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.32.2"
+    "@playwright/test": "^1.40.0",
+    "prettier": "^3.1.0"
   }
 }
