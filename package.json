@@ -20,7 +20,7 @@
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.42.1",
+    "@playwright/test": "^1.43.1",
     "prettier": "^3.2.5"
   }
 }
